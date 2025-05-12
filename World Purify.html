@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordo Lux Caecorum</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #ccc;
+      font-family: 'Garamond', serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    input, button {
+      background-color: #111;
+      color: #ccc;
+      border: 1px solid #444;
+      padding: 10px;
+      font-family: monospace;
+    }
+    .hidden-text {
+      color: #000; /* invisível em fundo preto */
+    }
+  </style>
+</head>
+<body>
+  <h1>Ordo Lux Caecorum</h1>
+  <p>Aqueles que veem através do Véu saberão o que fazer.</p>
+
+  <form onsubmit="checkPassword(); return false;">
+    <input type="password" id="password" placeholder="Senha de Acesso">
+    <button type="submit">Acessar</button>
+  </form>
+
+  <p class="hidden-text">senha: Purificado</p> <!-- senha visível só no código -->
+
+  <p id="message"></p>
+
+  <!-- DICA: Abra o código-fonte... Lux in tenebris latet. -->
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      if (input === "Purificado") {
+        document.getElementById("message").innerHTML =
+          "Acesso concedido. Prossiga para: <a href='segredo.html'>segredo.html</a>";
+      } else {
+        document.getElementById("message").innerText = "Acesso negado.";
+      }
+    }
+  </script>
+</body>
+</html>
